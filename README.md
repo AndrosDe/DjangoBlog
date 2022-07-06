@@ -4,8 +4,8 @@
 ## Setting up basic Django Project and Deploying to Heroku
 
 <strong>Warning: Terminal command update</strong><br>
-Since this video was created, Django has introduced a new version that will be automatically installed if you use the command in the video.
-To ensure that you get the same version of django and gunicorn used in this video and so that nothing breaks as you do the walkthrough, instead of the command pip3 install django gunicorn, please use this:
+Since this video was created, Django has introduced a new version that will be automatically installed if you use the command in the video.<br>
+To ensure that you get the same version of django and gunicorn used in this video and so that nothing breaks as you do the walkthrough,<br> instead of the command pip3 install django gunicorn, please use this:
 
 ### pip3 install 'django<4' gunicorn
 This will install Django 3.2 which is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest beta Django 4.
@@ -13,7 +13,7 @@ This will install Django 3.2 which is the LTS (Long Term Support) version of Dja
 
 ## Step 1: Installing Django and supporting libraries
 
-Note: It is recommended when you are still learning this content that you type out each line of code, rather than copying and pasting. This will help you learn!
+Note: It is recommended when you are still learning this content that you type out each line of code, rather than copying and pasting.<br> This will help you learn!
 
 <table>
   <tr>
@@ -22,8 +22,7 @@ Note: It is recommended when you are still learning this content that you type o
   <tr>
     <td>PROJ_NAME = codestar</td>
     <td>APP_NAME = blog</td>
-  </tr>
-                  
+  </tr>          
 </table>
 
 ### In the Terminal:
@@ -84,7 +83,8 @@ Note: It is recommended when you are still learning this content that you type o
     INSTALLED_APPS = [
     ...
     'APP_NAME',
-    ]    
+    ]
+</td>   
   </tr>
   <tr>
     <td>*</td>
@@ -228,7 +228,7 @@ In heroku.com: (Note: must be logged in)
   </tr>
   <tr>
     <td>10.</td>
-    <td>Remove the insecure secret key and replace - links to the SECRET_KEY variable on Heroku<br>(Note: font in bold is new)</td>
+    <td>Remove the insecure secret key and replace<br> - links to the SECRET_KEY variable on Heroku<br>(Note: font in bold is new)</td>
     <td>SECRET_KEY = os.environ.get('SECRET_KEY')</td>
   </tr>
   <tr>
@@ -250,7 +250,8 @@ In heroku.com: (Note: must be logged in)
     <td>
 
         DATABASES = {
-            'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+            'default': 
+            dj_database_url.parse(os.environ.get("DATABASE_URL"))
         }
 </td>
   </tr>
@@ -295,7 +296,7 @@ In heroku.com: (Note: must be logged in)
   </tr>
   <tr>
     <td>2.</td>
-    <td>Add Cloudinary URL to env.py - be sure to paste in the correct section of the link</td>
+    <td>Add Cloudinary URL to env.py<br> - be sure to paste in the correct section of the link</td>
     <td>os.environ["CLOUDINARY_URL"] = "cloudinary://************************"</td>
   </tr>
 </table>
@@ -309,12 +310,12 @@ In heroku.com: (Note: must be logged in)
   </tr>
   <tr>
     <td>3.</td>
-    <td>Add Cloudinary URL to Heroku Config Vars - be sure to paste in the correct section of the link</td>
+    <td>Add Cloudinary URL to Heroku Config Vars<br> - be sure to paste in the correct section of the link</td>
     <td>Add to Settings tab in Config Vars e.g. COUDINARY_URL, cloudinary://************************</td>
   </tr>
   <tr>
     <td>4.</td>
-    <td>Add DISABLE_COLLECTSTATIC to Heroku Config Vars (temporary step for the moment, will be removed before deployment)</td>
+    <td>Add DISABLE_COLLECTSTATIC to Heroku Config Vars<br> (temporary step for the moment, will be removed before deployment)</td>
     <td>e.g. DISABLE_COLLECTSTATIC, 1</td>
   </tr>
 </table>
@@ -343,7 +344,7 @@ In heroku.com: (Note: must be logged in)
   </tr>
   <tr>
     <td>6.</td>
-    <td>Tell Django to use Cloudinary to store media and static files Place under the Static files Note </td>
+    <td>Tell Django to use Cloudinary to store media and<br> static files Place under the Static files Note</td>
     <td>
 
     STATIC_URL = '/static/'
@@ -357,12 +358,12 @@ In heroku.com: (Note: must be logged in)
   </tr>
   <tr>
     <td>7.</td>
-    <td>Link file to the templates directory in Heroku Place under the BASE_DIR line</td>
+    <td>Link file to the templates directory in<br> Heroku Place under the BASE_DIR line</td>
     <td>TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')</td>
   </tr>
   <tr>
     <td>8.</td>
-    <td>Change the templates directory to TEMPLATES_DIR Place within the TEMPLATES array</td>
+    <td>Change the templates directory to<br> TEMPLATES_DIR Place within the TEMPLATES array</td>
     <td>
     
     TEMPLATES = [
